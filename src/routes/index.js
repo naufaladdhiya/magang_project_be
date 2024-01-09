@@ -1,6 +1,10 @@
 const HealthRouter = require("./health.routes");
+const UserRouter = require("./user.routes");
 
-const _routes = [["/", HealthRouter]];
+const _routes = [
+  ["/", HealthRouter],
+  ["/auth", UserRouter],
+];
 
 const routes = (app) => {
   _routes.forEach((route) => {
