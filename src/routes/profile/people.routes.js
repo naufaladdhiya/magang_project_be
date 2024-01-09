@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const multer = require("multer");
-const authToken = require("../middlewares/authToken");
+const authToken = require("../../middlewares/authToken");
 const {
   postProfileWalikota,
   getProfileWalikota,
@@ -14,72 +14,72 @@ const {
   getProfileSekretaris,
   updateProfileSekretaris,
   deleteProfileSekretaris,
-} = require("../controllers/profile.controller");
+} = require("../../controllers/profile/people.controller");
 
 const upload = multer({ storage: multer.memoryStorage() });
-const ProfileRouter = Router();
+const ProfilePeopleRouter = Router();
 
-ProfileRouter.post(
+ProfilePeopleRouter.post(
   "/walikota",
   authToken,
   upload.single("image"),
   postProfileWalikota
 );
-ProfileRouter.get("/walikota", getProfileWalikota);
-ProfileRouter.put(
+ProfilePeopleRouter.get("/walikota", getProfileWalikota);
+ProfilePeopleRouter.put(
   "/walikota",
   authToken,
   upload.single("image"),
   updateProfileWalikota
 );
-ProfileRouter.patch(
+ProfilePeopleRouter.patch(
   "/walikota",
   authToken,
   upload.single("image"),
   updateProfileWalikota
 );
-ProfileRouter.delete("/walikota", authToken, deleteProfileWalikota);
+ProfilePeopleRouter.delete("/walikota", authToken, deleteProfileWalikota);
 
-ProfileRouter.post(
+ProfilePeopleRouter.post(
   "/wakilwali",
   authToken,
   upload.single("image"),
   postProfileWakilwali
 );
-ProfileRouter.get("/wakilwali", getProfileWakilwali);
-ProfileRouter.put(
+ProfilePeopleRouter.get("/wakilwali", getProfileWakilwali);
+ProfilePeopleRouter.put(
   "/wakilwali",
   authToken,
   upload.single("image"),
   updateProfileWakilwali
 );
-ProfileRouter.patch(
+ProfilePeopleRouter.patch(
   "/wakilwali",
   authToken,
   upload.single("image"),
   updateProfileWakilwali
 );
-ProfileRouter.delete("/wakilwali", authToken, deleteProfileWakilwali);
+ProfilePeopleRouter.delete("/wakilwali", authToken, deleteProfileWakilwali);
 
-ProfileRouter.post(
+ProfilePeopleRouter.post(
   "/sekretaris",
   authToken,
   upload.single("image"),
   postProfileSekretaris
 );
-ProfileRouter.get("/sekretaris", getProfileSekretaris);
-ProfileRouter.put(
+ProfilePeopleRouter.get("/sekretaris", getProfileSekretaris);
+ProfilePeopleRouter.put(
   "/sekretaris",
   authToken,
   upload.single("image"),
   updateProfileSekretaris
 );
-ProfileRouter.patch(
+ProfilePeopleRouter.patch(
   "/sekretaris",
   authToken,
   upload.single("image"),
   updateProfileSekretaris
 );
-ProfileRouter.delete("/sekretaris", authToken, deleteProfileSekretaris);
+ProfilePeopleRouter.delete("/sekretaris", authToken, deleteProfileSekretaris);
 
-module.exports = ProfileRouter;
+module.exports = ProfilePeopleRouter;

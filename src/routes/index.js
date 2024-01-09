@@ -1,11 +1,13 @@
 const HealthRouter = require("./health.routes");
 const UserRouter = require("./user.routes");
-const ProfileRouter = require("./profile.routes");
+const ProfilePeopleRouter = require("./profile/people.routes");
+const ProfilePPIDRouter = require("./profile/ppid.routes");
 
 const _routes = [
   ["/", HealthRouter],
   ["/auth", UserRouter],
-  ["/profile", ProfileRouter],
+  ["/profile", ProfilePeopleRouter],
+  ["/profile", ProfilePPIDRouter],
 ];
 
 const routes = (app) => {

@@ -1,8 +1,8 @@
-const logger = require("../utils/logger");
-const { storeImage } = require("../utils/helper");
-const ProfileWalikotaModel = require("../models/profile/walikota.model");
-const ProfileWakilwaliModel = require("../models/profile/wakilwali.model");
-const ProfileSekretarisModel = require("../models/profile/sekretaris.model");
+const logger = require("../../utils/logger");
+const { storeImage } = require("../../utils/helper");
+const ProfileWalikotaModel = require("../../models/profile/walikota.model");
+const ProfileWakilwaliModel = require("../../models/profile/wakilwali.model");
+const ProfileSekretarisModel = require("../../models/profile/sekretaris.model");
 
 const postProfileWalikota = async (req, res) => {
   let { profile } = req.body;
