@@ -3,6 +3,7 @@ const UserRouter = require("./user.routes");
 const ProfilePeopleRouter = require("./profile/people.routes");
 const ProfilePPIDRouter = require("./profile/ppid.routes");
 const ProfileBaganOrganisasiRouter = require("./profile/bagan-organisasi.routes");
+const ProfileVisiMisiRouter = require("./profile/visi-misi.routes");
 
 const _routes = [
   ["/", HealthRouter],
@@ -10,6 +11,7 @@ const _routes = [
   ["/profile", ProfilePeopleRouter],
   ["/profile", ProfilePPIDRouter],
   ["/profile", ProfileBaganOrganisasiRouter],
+  ["/profile", ProfileVisiMisiRouter],
 ];
 
 const routes = (app) => {
