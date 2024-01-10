@@ -79,6 +79,26 @@ const updateDasarHukumFileValidation = (payload) => {
   return schema.validate(payload);
 };
 
+const createLinkPPIDPelaksanaValidation = (payload) => {
+  const schema = Joi.object({
+    title: Joi.string().required(),
+    link: Joi.string().required(),
+    user: Joi.object(),
+  });
+
+  return schema.validate(payload);
+};
+
+const updateLinkPPIDPelaksanaValidation = (payload) => {
+  const schema = Joi.object({
+    title: Joi.string(),
+    link: Joi.string(),
+    user: Joi.object(),
+  });
+
+  return schema.validate(payload);
+};
+
 module.exports = {
   createPPIDValidation,
   updatePPIDValidation,
@@ -88,4 +108,6 @@ module.exports = {
   updateDasarHukumTableValidation,
   createDasarHukumFileValidation,
   updateDasarHukumFileValidation,
+  createLinkPPIDPelaksanaValidation,
+  updateLinkPPIDPelaksanaValidation,
 };
