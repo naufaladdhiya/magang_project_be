@@ -6,6 +6,7 @@ const ProfileBaganOrganisasiRouter = require("./profile/bagan-organisasi.routes"
 const ProfileVisiMisiRouter = require("./profile/visi-misi.routes");
 const ProfileDasarHukumTableRouter = require("./profile/dasar-hukum/dasar-hukum-table.routes");
 const ProfileDasarHukumFileRouter = require("./profile/dasar-hukum/dasar-hukum-file.routes");
+const ProfileMaklumatPelayanan = require("./profile/maklumat-pelayanan.routes");
 
 const _routes = [
   ["/", HealthRouter],
@@ -16,6 +17,7 @@ const _routes = [
   ["/profile", ProfileVisiMisiRouter],
   ["/profile", ProfileDasarHukumTableRouter],
   ["/profile", ProfileDasarHukumFileRouter],
+  ["/profile", ProfileMaklumatPelayanan],
 ];
 
 const routes = (app) => {
