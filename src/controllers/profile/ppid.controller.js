@@ -47,6 +47,8 @@ const getPPID = async (req, res) => {
 const getPPIDById = async (req, res) => {
   try {
     const PPID = await PPIDModel.findById(req.params.id);
+    if (!PPID) return res.status(404).send({ message: "PPID not found" });
+
     return res.status(200).send({
       message: "Get PPID success",
       data: PPID,
