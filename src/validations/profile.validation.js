@@ -99,6 +99,26 @@ const updateLinkPPIDPelaksanaValidation = (payload) => {
   return schema.validate(payload);
 };
 
+const createFormulirKeberatanTableValidation = (payload) => {
+  const schema = Joi.object({
+    jenis: Joi.string().required(),
+    isi: Joi.string().required(),
+    user: Joi.object(),
+  });
+
+  return schema.validate(payload);
+};
+
+const updateFormulirKeberatanTableValidation = (payload) => {
+  const schema = Joi.object({
+    jenis: Joi.string(),
+    isi: Joi.string(),
+    user: Joi.object(),
+  });
+
+  return schema.validate(payload);
+};
+
 module.exports = {
   createPPIDValidation,
   updatePPIDValidation,
@@ -110,4 +130,6 @@ module.exports = {
   updateDasarHukumFileValidation,
   createLinkPPIDPelaksanaValidation,
   updateLinkPPIDPelaksanaValidation,
+  createFormulirKeberatanTableValidation,
+  updateFormulirKeberatanTableValidation,
 };

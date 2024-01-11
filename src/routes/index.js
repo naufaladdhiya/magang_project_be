@@ -9,6 +9,8 @@ const ProfileDasarHukumFileRouter = require("./profile/dasar-hukum/dasar-hukum-f
 const ProfileMaklumatPelayanan = require("./profile/maklumat-pelayanan.routes");
 const ProfileMekanismePelayananInformasiPublikRouter = require("./profile/mekanisme-pelayanan/informasi-publik.routes");
 const ProfileLinkPPIDPelaksanaRouter = require("./profile/link-ppid-pelaksana.routes");
+const ProfileFormulirKeberatanTableRouter = require("./profile/mekanisme-pelayanan/formulir-keberatan-table.routes");
+const ProfileUpayaTidakDitanggapiRouter = require("./profile/mekanisme-pelayanan/upaya-tidak-ditanggapi.routes");
 
 const _routes = [
   ["/", HealthRouter],
@@ -21,6 +23,8 @@ const _routes = [
   ["/profile", ProfileDasarHukumFileRouter],
   ["/profile", ProfileMaklumatPelayanan],
   ["/profile", ProfileMekanismePelayananInformasiPublikRouter],
+  ["/profile", ProfileFormulirKeberatanTableRouter],
+  ["/profile", ProfileUpayaTidakDitanggapiRouter],
   ["/profile", ProfileLinkPPIDPelaksanaRouter],
 ];
 
