@@ -1,0 +1,2563 @@
+{
+	"info": {
+		"_postman_id": "365572f4-d64b-4b17-b962-bfaf80299d09",
+		"name": "Bappeda-surakarta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23908007"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"supperadminaa\",\r\n    \"password\": \"supperadminaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "supperadmin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "supperadmin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTU5NWQwYWQ1ODc3NmMzZWVjOWYyYSIsImlhdCI6MTcwNDU0MDQxNSwiZXhwIjoxNzA0NjI2ODE1fQ.hNn2sCqmvH8uVHdApPdkHQ_3Xaa8OSGI1b6qdS21r-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Walikota",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/walikota",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"walikota"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/walikota",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"walikota"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "test edited",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/walikota",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"walikota"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "test edited",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/book-doctor-appointment-form.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/walikota",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"walikota"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/walikota",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"walikota"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Wakil Walikota",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "\"\"",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/book-doctor-appointment-form.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/wakilwali",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"wakilwali"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "\"\"",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/book-doctor-appointment-form.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/wakilwali",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"wakilwali"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "test edited",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/wakilwali",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"wakilwali"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "test edited",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/book-doctor-appointment-form.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/wakilwali",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"wakilwali"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/wakilwali",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"wakilwali"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sekretaris",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "\"sekretaris\"",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/image.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/sekretaris",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"sekretaris"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "\"\"",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/book-doctor-appointment-form.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/sekretaris",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"sekretaris"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "test edited",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/sekretaris",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"sekretaris"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"value": "test edited",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/book-doctor-appointment-form.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/sekretaris",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"sekretaris"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/sekretaris",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"sekretaris"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PPID",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Profile s\",\r\n    \"description\": \"Iwak sego\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/ppid",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"ppid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/ppid",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"ppid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/ppid/659d7ea80b7a5605b4d5f98c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"ppid",
+										"659d7ea80b7a5605b4d5f98c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Profile s edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/ppid/659d7ea80b7a5605b4d5f98c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"ppid",
+										"659d7ea80b7a5605b4d5f98c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Profile ss2\",\r\n    \"description\": \"Iwak sego edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/ppid/659d7ea80b7a5605b4d5f98c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"ppid",
+										"659d7ea80b7a5605b4d5f98c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDc5NTkwMSwiZXhwIjoxNzA0ODgyMzAxfQ.KXqoM8lR52szoHBTCqS6druaQFbDO6QmotUkNOKYXtQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/ppid/659d7ea80b7a5605b4d5f98c",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"ppid",
+										"659d7ea80b7a5605b4d5f98c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bagan Organisasi",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/image.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/bagan-organisasi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"bagan-organisasi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/bagan-organisasi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"bagan-organisasi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/image.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/bagan-organisasi/659ea3a0a1943c7353255777",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"bagan-organisasi",
+										"659ea3a0a1943c7353255777"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/bagan-organisasi/659ea3a0a1943c7353255777",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"bagan-organisasi",
+										"659ea3a0a1943c7353255777"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/bagan-organisasi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"bagan-organisasi"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Visi Misi",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Misi\",\r\n    \"description\": \"Iwak sego\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/visi-misi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"visi-misi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/visi-misi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"visi-misi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/visi-misi/659eaac2e7bd08cd40dcaa56",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"visi-misi",
+										"659eaac2e7bd08cd40dcaa56"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Misi edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/visi-misi/659eaac2e7bd08cd40dcaa56",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"visi-misi",
+										"659eaac2e7bd08cd40dcaa56"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Misi edited 2\",\r\n    \"description\": \"Iwak sego edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/visi-misi/659eaac2e7bd08cd40dcaa56",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"visi-misi",
+										"659eaac2e7bd08cd40dcaa56"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/visi-misi/659eaac2e7bd08cd40dcaa56",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"visi-misi",
+										"659eaac2e7bd08cd40dcaa56"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dasar Hukum Table",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jenis\": \"Pejabat yang Menguasai Informasi\",\r\n    \"isi\": \"PPID\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-table",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-table"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-table?search=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-table"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isi\": \"PPID edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jenis\": \"Misi edited 2\",\r\n    \"isi\": \"Iwak sego edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dasar Hukum File",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"test a title\",\r\n    \"link\": \"test a link\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-file",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-file"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-file?search",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-file"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-file/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-file",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"link\": \"PPID edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-file/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-file",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Misi edited 2\",\r\n    \"link\": \"Iwak sego edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-file/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-file",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/dasar-hukum-file/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"dasar-hukum-file",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Maklumat Pelayanan",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/maklumat-pelayanan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"maklumat-pelayanan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/maklumat-pelayanan",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"maklumat-pelayanan"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/maklumat-pelayanan/659eb7735045a6ab4c00b369",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"maklumat-pelayanan",
+										"659eb7735045a6ab4c00b369"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/maklumat-pelayanan/659eb7735045a6ab4c00b369",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"maklumat-pelayanan",
+										"659eb7735045a6ab4c00b369"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/maklumat-pelayanan/659eb7735045a6ab4c00b369",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"maklumat-pelayanan",
+										"659eb7735045a6ab4c00b369"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/maklumat-pelayanan/659eb7735045a6ab4c00b369",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"maklumat-pelayanan",
+										"659eb7735045a6ab4c00b369"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Mekanisme Pelayanan Informasi Publik",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "awdawd",
+											"type": "text"
+										},
+										{
+											"key": "subtitle",
+											"value": "subtitled",
+											"type": "text"
+										},
+										{
+											"key": "subtitle_link",
+											"value": "ini link subtitle",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/book-doctor-appointment-card-template_151150-11155.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/mekanisme-pelayanan-informasi-publik",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"mekanisme-pelayanan-informasi-publik"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/mekanisme-pelayanan-informasi-publik",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"mekanisme-pelayanan-informasi-publik"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/mekanisme-pelayanan-informasi-publik/659ebf3f363b3c08c3d35bce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"mekanisme-pelayanan-informasi-publik",
+										"659ebf3f363b3c08c3d35bce"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/mekanisme-pelayanan-informasi-publik/659ebf3f363b3c08c3d35bce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"mekanisme-pelayanan-informasi-publik",
+										"659ebf3f363b3c08c3d35bce"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/mekanisme-pelayanan-informasi-publik/659ebf3f363b3c08c3d35bce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"mekanisme-pelayanan-informasi-publik",
+										"659ebf3f363b3c08c3d35bce"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/mekanisme-pelayanan-informasi-publik/659ebf3f363b3c08c3d35bce",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"mekanisme-pelayanan-informasi-publik",
+										"659ebf3f363b3c08c3d35bce"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Formulir Keberatan Table",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jenis\": \"Pejabat yang Menguasai Informasi\",\r\n    \"isi\": \"PPID\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/formulir-keberatan-table",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"formulir-keberatan-table"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/formulir-keberatan-table?search=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"formulir-keberatan-table"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/formulir-keberatan-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"formulir-keberatan-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isi\": \"PPID edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/formulir-keberatan-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"formulir-keberatan-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jenis\": \"Misi edited 2\",\r\n    \"isi\": \"Iwak sego edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/formulir-keberatan-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"formulir-keberatan-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/formulir-keberatan-table/659eaf80c36896e55d8fb491",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"formulir-keberatan-table",
+										"659eaf80c36896e55d8fb491"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Upaya Tidak Ditanggapi",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "asolole",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "asssololee",
+											"type": "text"
+										},
+										{
+											"key": "tata_cara",
+											"value": "awsadwole",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/ulinn/Downloads/Images/image.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/upaya-tidak-ditanggapi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"upaya-tidak-ditanggapi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/upaya-tidak-ditanggapi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"upaya-tidak-ditanggapi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/upaya-tidak-ditanggapi/659faa0094139befb41af96a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"upaya-tidak-ditanggapi",
+										"659faa0094139befb41af96a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/upaya-tidak-ditanggapi/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"upaya-tidak-ditanggapi",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/upaya-tidak-ditanggapi/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"upaya-tidak-ditanggapi",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/upaya-tidak-ditanggapi",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"upaya-tidak-ditanggapi"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Link PPID Pelaksana",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"test a title\",\r\n    \"link\": \"test a link\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/link-ppid-pelaksana",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"link-ppid-pelaksana"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/link-ppid-pelaksana?search",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"link-ppid-pelaksana"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Byid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/link-ppid-pelaksana/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"link-ppid-pelaksana",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"link\": \"PPID edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/link-ppid-pelaksana/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"link-ppid-pelaksana",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edited Full",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Misi edited 2\",\r\n    \"link\": \"Iwak sego edited\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/profile/link-ppid-pelaksana/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"link-ppid-pelaksana",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OWQxYjNhZjc5ZDY5NTU0YjkxYzhiOCIsImlhdCI6MTcwNDg5NTM3NiwiZXhwIjoxNzA0OTgxNzc2fQ.pwGggkYQHfZ8gQmGMiMp3sOd0GvL1pSJMNAmDKVkdtA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/profile/link-ppid-pelaksana/659eb21aac914b92e87fa4c2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"profile",
+										"link-ppid-pelaksana",
+										"659eb21aac914b92e87fa4c2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
