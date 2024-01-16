@@ -15,7 +15,7 @@ const register = async (req, res) => {
   }
 
   try {
-    const exitingUser = await UserModel.findOne({ username: value.username });
+    const exitingUser = await UserModel.findOne({ email: value.email });
     if (exitingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
@@ -34,9 +34,9 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const User = await UserModel.findOne({ username });
+    const User = await UserModel.findOne({ email });
     if (!User) {
       logger.error("User not found");
       return res.status(400).send({ message: "User not found", data: {} });
@@ -54,6 +54,7 @@ const login = async (req, res) => {
     return res.status(200).send({
       message: "Login success",
       data: {
+        email: User.email,
         username: User.username,
         token,
       },
@@ -75,6 +76,7 @@ const getMe = async (req, res) => {
     return res.status(200).send({
       message: "Get me success",
       data: {
+        email: User.email,
         username: User.username,
       },
     });
